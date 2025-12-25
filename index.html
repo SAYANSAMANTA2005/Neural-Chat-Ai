@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced AI Chatbot Interface</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">
+                    <span class="logo">⚡</span>
+                    Neural Chat AI
+                </h1>
+                <div class="header-controls">
+                    <button id="voiceToggle" class="btn-icon" title="Toggle Voice">
+                        🎤
+                    </button>
+                    <button id="clearHistory" class="btn-icon" title="Clear History">
+                        🗑️
+                    </button>
+                    <button id="exportChat" class="btn-icon" title="Export Chat">
+                        💾
+                    </button>
+                </div>
+            </div>
+            <div class="status-bar">
+                <span id="status" class="status">Ready</span>
+                <div class="indicator" id="indicator"></div>
+            </div>
+        </header>
+
+        <main class="chat-container">
+            <div class="messages-wrapper">
+                <div id="messagesArea" class="messages-area">
+                    <div class="welcome-section">
+                        <h2>Welcome to Neural Chat AI</h2>
+                        <p>Ask me anything about technology, science, programming, or just chat!</p>
+                        <div class="quick-prompts">
+                            <button class="prompt-btn" data-prompt="Explain quantum computing in simple terms">Quantum Computing</button>
+                            <button class="prompt-btn" data-prompt="What are the latest AI trends?">AI Trends</button>
+                            <button class="prompt-btn" data-prompt="How does machine learning work?">Machine Learning</button>
+                            <button class="prompt-btn" data-prompt="Explain blockchain technology">Blockchain</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="input-section">
+                <div class="input-wrapper">
+                    <div class="input-container">
+                        <input 
+                            type="text" 
+                            id="userInput" 
+                            class="input-field" 
+                            placeholder="Type your message... (or press Space + Enter for voice)"
+                            autocomplete="off"
+                        >
+                        <div class="input-actions">
+                            <button id="voiceInput" class="btn-voice" title="Voice Input">
+                                🎙️
+                            </button>
+                            <button id="sendBtn" class="btn-send" title="Send Message">
+                                ➤
+                            </button>
+                        </div>
+                    </div>
+                    <div class="input-info">
+                        <span id="charCount">0</span> / 2000 characters
+                    </div>
+                </div>
+                <div id="voiceIndicator" class="voice-indicator hidden">
+                    <span class="listening-dot"></span>
+                    Listening...
+                </div>
+            </footer>
+        </main>
+
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Settings</h3>
+            </div>
+            <div class="settings-group">
+                <label for="themeSelect">Theme:</label>
+                <select id="themeSelect" class="select-control">
+                    <option value="dark">Dark</option>
+                    <option value="light">Light</option>
+                    <option value="auto">Auto</option>
+                </select>
+            </div>
+            <div class="settings-group">
+                <label for="fontSizeSelect">Font Size:</label>
+                <select id="fontSizeSelect" class="select-control">
+                    <option value="small">Small</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="large">Large</option>
+                </select>
+            </div>
+            <div class="settings-group">
+                <label class="toggle-label">
+                    <input type="checkbox" id="autoScroll" checked>
+                    <span>Auto-scroll</span>
+                </label>
+            </div>
+            <div class="settings-group">
+                <label class="toggle-label">
+                    <input type="checkbox" id="soundEnabled" checked>
+                    <span>Sound Effects</span>
+                </label>
+            </div>
+            <div class="sidebar-divider"></div>
+            <div class="stats">
+                <h4>Session Stats</h4>
+                <div class="stat-item">
+                    <span class="stat-label">Messages:</span>
+                    <span class="stat-value" id="messageCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Tokens Used:</span>
+                    <span class="stat-value" id="tokenCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Response Time:</span>
+                    <span class="stat-value" id="responseTime">0ms</span>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <div id="notificationArea" class="notification-area"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
